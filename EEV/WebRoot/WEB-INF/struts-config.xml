@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<data-sources/>
+	
+	<form-beans>
+		<form-bean name="loginForm" type="grupo7.struts.form.LoginForm" />
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action attribute="loginForm" input="/form/login.jsp"
+			name="loginForm" path="/login" scope="request"
+			type="grupo7.struts.action.LoginAction">
+			<forward name="exitoLoginRoot" path="/form/Ifaz_root.jsp"
+				redirect="true" />
+			<forward name="falloLogin" path="/form/login.jsp"
+				redirect="true" />
+		</action>
+		
+
+	</action-mappings>
+
+	<message-resources parameter="grupo7.struts.Recursos" />
+</struts-config>
+
